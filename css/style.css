@@ -4,15 +4,22 @@ html, * {
 }
 
 body {
+  
+  background-image: url(img/street.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
 
-div {
-    background-color: green;
-    margin: 200px;
-    height: 150px;
-  }
+/*.image {
+  content: url(img/index.jpg)
+  
+  
+  
+}
+
