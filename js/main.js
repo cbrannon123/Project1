@@ -7,12 +7,16 @@ const targets = {
 
 }
 /*----- app's state (variables) -----*/
-var target1 = document.querySelector(".image");
+var target1 = document.querySelector("#bg1");
+var target2 = document.querySelector("#bg2");
+var target3 = document.querySelector("#bg3");
 
 /*----- cached element references -----*/
 
 /*----- event listeners -----*/
-document.querySelector(".image").addEventListener('click', kill)
+target1.addEventListener('click', kill)
+target2.addEventListener('click', kill)
+target3.addEventListener('click', kill)
  
 
 /*----- functions -----*/
@@ -21,11 +25,11 @@ render()
 function kill(evt) {
   var marker = evt.target;
 marker.style.display = "none";
-render()
-}
 
+}
+//figure out how to make this show pictures!!!
 function render() {
-target1.style.content = 'url(img/index.jpg)';
+ 
 }
 
 

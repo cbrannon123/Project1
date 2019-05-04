@@ -5,21 +5,77 @@ html, * {
 
 body {
   
-  background-image: url(img/street.jpg);
+  background-image: url(img/sleep.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  
+                   
  
 }
 
-/*.image {
-  content: url(img/index.jpg)
-  
-  
-  
+#sky {
+  grid-area: sky;
+  border: 2px solid red;
 }
 
+#mid {
+  grid-area: mid;
+  border: 2px solid red;
+}
+
+#stb {
+grid-area: stb;
+border: 2px solid red;
+}
+
+#stf {
+grid-area: stf;
+border: 2px solid red;
+}
+
+td {
+  height: 230px;
+  width: 300px;
+  border: 2px solid red;
+}
+
+
+
+#bg1 {
+  content: url(img/bg1.png);
+  height: 100px;
+  grid-area: bg1;
+  
+  
+
+}
+
+#bg2 {
+  content: url(img/bg1.png);
+  height: 100px;
+  grid-area: bg2;
+  border: 3px solid red;
+  
+
+}
+
+#bg3 {
+  content: url(img/bg1.png);
+  height: 100px;
+  grid-area: bg3;
+  border: 3px solid red;
+  
+
+}
+
+table tr {
+  display: grid;
+  grid-template-columns: 1f 1f 1f 1f;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "sky sky sky sky"
+  "mid mid mid mid"
+  "stb stb stb stb"
+  "stf stf stf stf";
+}
