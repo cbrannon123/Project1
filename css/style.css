@@ -18,6 +18,7 @@ body {
 
 .scorebox {
   border: 2px solid red;
+  color: red;
   height: 70px;
   width: 100px;
   background-color: black;
@@ -30,7 +31,7 @@ body {
 }
 
 .level {
-  border: 2px solid red;
+  border: 1px solid red;
   width: 99%;
   height: 400px;
   position: fixed;
@@ -38,13 +39,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
+  grid-area: mn;
   grid-template-areas: 
-  ". . . . . a6"
-  ". a5 . . . ."
-  ". . . a4 . ."
-  "a3 . . . . ."
-  ". . a2 . . ."
-  ". . . . . a1"
+  "mn mn mn mn mn mn"
+  "mn mn mn mn mn mn"
+  ". . a2 a5 . ."
+  ". a3 . . . a4"
+  ". . . . . ."
+  "a6 . . . a1 ."
   
 }
 
@@ -54,7 +56,7 @@ body {
   border: 1px solid darkgray;
   background-color: black;
   border-radius: 50px;
-  height: 20px;
+  height: 10px;
   width: 230px;
   margin: 0 auto;
   grid-area: a1; 
@@ -64,8 +66,8 @@ body {
   border: 1px solid darkgray;
   background-color: black;
   border-radius: 50px;
-  height: 20px;
-  width: 230px;
+  height: 10px;
+  width: 130px;
   margin: 0 auto; 
   grid-area: a2;
 }
@@ -74,8 +76,8 @@ body {
   border: 1px solid darkgray;
   background-color: black;
   border-radius: 50px;
-  height: 20px;
-  width: 230px;
+  height: 10px;
+  width: 200px;
   margin: 0 auto; 
   grid-area: a3;
 }
@@ -86,8 +88,8 @@ body {
   border: 1px solid darkgray;
   background-color: black;
   border-radius: 50px;
-  height: 20px;
-  width: 230px;
+  height: 10px;
+  width: 200px;
   margin: 0 auto; 
   grid-area: a4;
 }
@@ -96,7 +98,7 @@ body {
   border: 1px solid darkgray;
   background-color: black;
   border-radius: 50px;
-  height: 20px;
+  height: 10px;
   width: 150px;
   margin: 0 auto;
   grid-area: a5; 
@@ -106,7 +108,7 @@ body {
   border: 1px solid darkgray;
   background-color: black;
   border-radius: 50px;
-  height: 20px;
+  height: 10px;
   width: 230px;
   margin: 0 auto; 
   grid-area: a6;
