@@ -9,73 +9,18 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  
-                   
- 
+            
 }
 
-#sky {
-  grid-area: sky;
+.scorebox {
   border: 2px solid red;
+  height: 70px;
+  width: 100px;
+  background-color: black;
+  text-align: center;
 }
 
-#mid {
-  grid-area: mid;
-  border: 2px solid red;
-}
-
-#stb {
-grid-area: stb;
-border: 2px solid red;
-}
-
-#stf {
-grid-area: stf;
-border: 2px solid red;
-}
-
-td {
-  height: 230px;
-  width: 300px;
-  border: 2px solid red;
-}
-
-
-
-#bg1 {
-  content: url(img/bg1.png);
-  height: 100px;
-  grid-area: bg1;
-  
-  
-
-}
-
-#bg2 {
-  content: url(img/bg1.png);
-  height: 100px;
-  grid-area: bg2;
-  border: 3px solid red;
-  
-
-}
-
-#bg3 {
-  content: url(img/bg1.png);
-  height: 100px;
-  grid-area: bg3;
-  border: 3px solid red;
-  
-
-}
-
-table tr {
-  display: grid;
-  grid-template-columns: 1f 1f 1f 1f;
-  grid-template-rows: auto;
-  grid-template-areas: 
-  "sky sky sky sky"
-  "mid mid mid mid"
-  "stb stb stb stb"
-  "stf stf stf stf";
+.score {
+  color: red;
+  font-size: 50px;
 }
