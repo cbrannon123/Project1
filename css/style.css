@@ -1,6 +1,7 @@
 html, * {
   font-family: helvetica;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  
   
   
             
@@ -31,7 +33,7 @@ body {
 }
 
 .level {
-  border: 1px solid red;
+  
   width: 99%;
   height: 400px;
   position: fixed;
@@ -52,7 +54,7 @@ body {
 
 
 
-.area1{
+.area1 {
   border: 1px solid;
   background-color: black;
   border-radius: 50px;
@@ -60,6 +62,8 @@ body {
   width: 230px;
   margin: 0 auto;
   grid-area: a1; 
+  
+  
 }
 
 .area2 {
@@ -70,6 +74,7 @@ body {
   width: 130px;
   margin: 0 auto; 
   grid-area: a2;
+  
 }
 
 .area3 {
@@ -80,6 +85,7 @@ body {
   width: 200px;
   margin: 0 auto; 
   grid-area: a3;
+  
 }
 
 
