@@ -13,6 +13,9 @@ body {
   
 }
 
+
+
+
 .scorebox {
   border: 2px solid red;
   color: red;
@@ -30,7 +33,7 @@ body {
 #timebox {
   background-color: rgb(45, 48, 51);
   border: 1px solid red;
-  width: 80px;
+  width: 100px;
   height: 40px;
   text-align: center;
   color: red;
@@ -53,12 +56,22 @@ body {
   grid-template-rows: auto;
   grid-area: mn;
   grid-template-areas: 
-  "mn mn mn mn mn mn"
-  "mn mn mn mn mn mn"
-  ". . a2 a5 . ."
-  ". a3 g1 . . a4"
+  ". . . a2 . ."
+  ". . a1 . . a4"
+  ". a6 . . a5 ."
+  "a3 . . . . ."
+  ". . g1 . . ."
   ". . . . . ."
-  "a6 . . . a1 ."
+  
+}
+
+button {
+  background-color:rgb(45, 48, 51);
+  color: red;
+  height: 40px;
+  width: 100px;
+  border: 1px solid red;
+  margin: 0;
   
 }
 
@@ -127,8 +140,8 @@ body {
 }
 
 .gun {
-  height: 30px;
-  margin: 0 auto;
+  height: 50px;
+  margin: -150px 0 100px 0;
   grid-area: g1;
 }
 

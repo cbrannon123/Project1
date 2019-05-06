@@ -1,45 +1,64 @@
 /*----- constants -----*/
-const targets = {
-  bg1: {
-    img: 'img/bg1.png',
-    pts: '10'
-  }
 
-}
+
+const reload = new Audio('https://freesound.org/data/previews/276/276956_5172328-lq.mp3')
+const gunShot = new Audio('https://freesound.org/data/previews/212/212607_1654571-lq.mp3');
 /*----- app's state (variables) -----*/
 var target1 = document.querySelector(".target");
 var timer1 = document.getElementById("timer");
+var startGame = document.querySelector('button');
+var points = document.querySelector('.score')
+
 
 /*----- cached element references -----*/
+var level, hit, miss
 
 
 /*----- event listeners -----*/
-target1.addEventListener('click', kill)
-
+target1.addEventListener('click', hit);
+startGame.addEventListener('click', render);
+document.addEventListener('click', gunSound);
+points.addEventListener('click', hit)
  
 
 /*----- functions -----*/
 
-timer();
+
 
 function timer(){
   var timeStart = 60;
   var gameTime = setInterval(function(){
     timer1.innerHTML = timeStart;
     timeStart -= 1;
-    if(timeStart <= 0){
+   if(timeStart < 0){
       clearInterval(gameTime);
-    }
-    
+   }
   }, 1000)
+  
+}
+
+function gunSound() {
+   gunShot.play();
+   gunShot.currentTime = 0;
+  
+  
 }
 
 
 
-
-function kill(evt) {
+function hit(evt) {
   var marker = evt.target;
-marker.style.display = "none";
 
 }
 
+function render() {
+  reload.play();
+  timer();
+ 
+}
+
+function init () {
+  level = [null, null, null, null, null, null];
+  points = 0;
+
+}
