@@ -5,18 +5,11 @@ html, * {
 }
 
 body {
-  
   background-image: url(img/sleep.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  
-  
-  
-            
+  height: 100vh;      
 }
-
-
 
 .scorebox {
   border: 2px solid red;
@@ -33,7 +26,6 @@ body {
 }
 
 .level {
-  
   width: 99%;
   height: 400px;
   position: fixed;
@@ -52,47 +44,42 @@ body {
   
 }
 
-
-
 .area1 {
-  border: 1px solid;
-  background-color: black;
+  color: red;
+  border-bottom: 3px solid black;
   border-radius: 50px;
   height: 10px;
   width: 230px;
   margin: 0 auto;
   grid-area: a1; 
   
-  
 }
 
 .area2 {
-  border: 1px solid;
-  background-color: black;
+  color: red;
+  border-bottom: 3px solid black;
   border-radius: 50px;
   height: 10px;
   width: 130px;
   margin: 0 auto; 
   grid-area: a2;
-  
 }
 
 .area3 {
-  border: 1px solid;
-  background-color: black;
+  color: red;
+  border-bottom: 3px solid black;
   border-radius: 50px;
   height: 10px;
   width: 200px;
   margin: 0 auto; 
   grid-area: a3;
-  
 }
 
 
 
 .area4 {
-  border: 1px solid ;
-  background-color: black;
+  color: red;
+  border-bottom: 3px solid black;
   border-radius: 50px;
   height: 10px;
   width: 200px;
@@ -101,18 +88,18 @@ body {
 }
 
 .area5 {
-  border: 1px solid;
-  background-color: black;
+  color: red;
+  border-bottom: 3px solid black;
   border-radius: 50px;
   height: 10px;
-  width: 130px;
+  width: 100px;
   margin: 0 auto;
   grid-area: a5; 
 }
 
 .area6 {
-  border: 1px solid;
-  background-color: black;
+  color: red;
+  border-bottom: 3px solid black;
   border-radius: 50px;
   height: 10px;
   width: 230px;
