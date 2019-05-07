@@ -145,11 +145,11 @@ button {
   grid-area: g1;
 }
 
- .target {
+ #target {
  background-image: url(img/bg1.png);
  background-repeat: no-repeat;
  height: 250px;
  width: 100px;
- display: none;
+ 
 }
 
