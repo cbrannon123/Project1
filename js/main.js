@@ -7,8 +7,8 @@ const gunShot = new Audio('https://freesound.org/data/previews/212/212607_165457
 var target1 = document.querySelector(".target");
 var timer1 = document.getElementById("timer");
 var startGame = document.querySelector('button');
-var points = document.querySelector('.score')
-
+var points = document.querySelector('.score');
+var fOv = document.querySelector('body');
 
 /*----- cached element references -----*/
 var level, hit, miss
@@ -17,13 +17,13 @@ var level, hit, miss
 /*----- event listeners -----*/
 target1.addEventListener('click', hit);
 startGame.addEventListener('click', render);
-document.addEventListener('click', gunSound);
-points.addEventListener('click', hit)
+fOv.addEventListener('click', gunSound);
+points.addEventListener('click', hit);
  
 
 /*----- functions -----*/
 
-
+//count down func
 
 function timer(){
   var timeStart = 60;
@@ -33,13 +33,18 @@ function timer(){
    if(timeStart < 0){
       clearInterval(gameTime);
    }
+   
   }, 1000)
   
 }
+//gun  sound
 
 function gunSound() {
-   gunShot.play();
-   gunShot.currentTime = 0;
+  if(timer1 === false) {
+    return gunShot.paused();
+  }
+  gunShot.play();
+  gunShot.currentTime = 0;
   
   
 }
@@ -48,9 +53,10 @@ function gunSound() {
 
 function hit(evt) {
   var marker = evt.target;
+  
 
 }
-
+// button to start clock
 function render() {
   reload.play();
   timer();
