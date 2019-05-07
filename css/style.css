@@ -57,10 +57,10 @@ body {
   grid-template-rows: auto;
   grid-area: mn;
   grid-template-areas: 
-  ". . . a2 . ."
-  ". . a1 . . a4"
-  ". a6 . . a5 ."
-  "a3 . . . . ."
+  ". a6 . a2 a5 ."
+  "a3 . a1 . . a4"
+  ". . . . . ."
+  ". . . . . ."
   ". . g1 . . ."
   ". . . . . ."
   
@@ -142,12 +142,15 @@ button {
 
 .gun {
   height: 50px;
-  margin: -120px 0 140px 0;
+  margin: -100px 0 140px 0;
   grid-area: g1;
 }
 
-.target {
+ div.target {
+ background-image: url(img/bg1.png);
  background-repeat: no-repeat;
- height: 300px;
+ 
+ height: 250px;
+ width: 100px;
 }
 

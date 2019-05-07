@@ -8,7 +8,7 @@ var target1 = document.querySelector(".target");
 var timer1 = document.getElementById("timer");
 var startGame = document.querySelector('button');
 var points = document.querySelector('.score');
-var fOv = document.querySelector('body');
+var fOv = document.querySelector('.level');
 
 /*----- cached element references -----*/
 var level, hit, miss
@@ -18,7 +18,7 @@ var level, hit, miss
 target1.addEventListener('click', hit);
 startGame.addEventListener('click', render);
 fOv.addEventListener('click', gunSound);
-points.addEventListener('click', hit);
+//points.addEventListener('click', hit);
  
 
 /*----- functions -----*/
@@ -26,45 +26,45 @@ points.addEventListener('click', hit);
 //count down func
 
 function timer(){
-  var timeStart = 60;
+  var timeStart = 20;
   var gameTime = setInterval(function(){
     timer1.innerHTML = timeStart;
     timeStart -= 1;
    if(timeStart < 0){
       clearInterval(gameTime);
-   }
+      prompt("Restart")
+    } 
+    
    
-  }, 1000)
+  },1000)
   
 }
 //gun  sound
 
 function gunSound() {
-  if(timer1 === false) {
-    return gunShot.paused();
-  }
   gunShot.play();
   gunShot.currentTime = 0;
+     
+    
+  }
   
   
-}
-
-
+ 
 
 function hit(evt) {
   var marker = evt.target;
   
-
+  console.log(marker);
 }
+
 // button to start clock
 function render() {
   reload.play();
   timer();
- 
 }
 
 function init () {
   level = [null, null, null, null, null, null];
   points = 0;
-
+  
 }
