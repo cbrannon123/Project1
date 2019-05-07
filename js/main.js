@@ -14,7 +14,7 @@ var areas = document.getElementsByClassName('area')
 console.log(areas)
 
 /*----- cached element references -----*/
-var level, hit, miss, target, currentTarget
+var level, hit, miss, currentTarget
 
 
 /*----- event listeners -----*/
@@ -28,25 +28,30 @@ fOv.addEventListener('click', gunSound);
 /*----- functions -----*/
 init()
 
-function popUp(){
-  var random = Math.floor((Math.random() * 6) +1);
+function popUp() {
+  var random = Math.floor((Math.random() * 6) + 0);
   currentTarget = areas[random]
-  currentTarget.textContent = "yoOOOOOO";
+  currentTarget.textContent = "HERE";
 
 }
 
+function removePopUp() {
+  if (currentTarget = currentTarget) {
+    currentTarget.textContent = null;
+  }
 
 
+}
 //count down 
 
 function timer() {
-  var timeStart = 20;
+  var timeStart = 5;
   var gameTime = setInterval(function () {
     timer1.innerHTML = timeStart;
     timeStart -= 1;
     if (timeStart < 0) {
       clearInterval(gameTime);
-     
+      init()
     }
   }, 1000)
 }
@@ -64,23 +69,24 @@ function hit(evt) {
   console.log(marker);
 }
 
-function playGame(){
+function playGame() {
   render()
 }
 
 // button to start clock
 function render() {
   reload.play();
-  var popUps = setInterval(function () {
+  var popUs = setInterval(function () {
     popUp()
   }, 1000)
-  // var removePopUps = setInterval(function () {
-  //   removePopUp()
-  // }, 1000)
+  var removePopUps = setInterval(function () {
+    removePopUp()
+  }, 900)
   timer();
 }
 
 function init() {
-  target = [null, null, null, null, null, null];
+  currentTarget = [null, null, null, null, null, null];
   points = 0;
+
 }

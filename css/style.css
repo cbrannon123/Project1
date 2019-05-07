@@ -57,9 +57,9 @@ body {
   grid-template-rows: auto;
   grid-area: mn;
   grid-template-areas: 
-  ". a6 . a2 a5 ."
+  ". a6 . . a5 ."
   "a3 . a1 . . a4"
-  ". . . . . ."
+  ". a2 . . . ."
   ". . . . . ."
   ". . g1 . . ."
   ". . . . . ."
@@ -84,7 +84,6 @@ button {
   width: 230px;
   margin: 0 auto;
   grid-area: a1; 
-  
   
 }
 
