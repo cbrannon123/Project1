@@ -26,7 +26,11 @@ body {
   text-align: center;
 }
 
-.score {
+#miss {
+  color: red;
+}
+
+#score {
   color: red;
   font-size: 50px;
 }
@@ -57,8 +61,8 @@ body {
   grid-template-rows: auto;
   grid-area: mn;
   grid-template-areas: 
-  ". a6 . . a5 ."
-  "a3 . a1 . . a4"
+  ". a6 . a1 a5 ."
+  "a3 . . . . a4"
   ". a2 . . . ."
   ". . . . . ."
   ". . g1 . . ."
@@ -77,9 +81,6 @@ button {
 }
 
 .area1 {
-  color: red;
-  border-bottom: 3px solid black;
-  border-radius: 50px;
   height: 10px;
   width: 230px;
   margin: 0 auto;
@@ -88,9 +89,6 @@ button {
 }
 
 .area2 {
-  color: red;
-  border-bottom: 3px solid black;
-  border-radius: 50px;
   height: 10px;
   width: 130px;
   margin: 0 0 0 70px; 
@@ -98,9 +96,6 @@ button {
 }
 
 .area3 {
-  color: red;
-  border-bottom: 3px solid black;
-  border-radius: 50px;
   height: 10px;
   width: 150px;
   margin: 0 auto; 
@@ -110,9 +105,6 @@ button {
 
 
 .area4 {
-  color: red;
-  border-bottom: 3px solid black;
-  border-radius: 50px;
   height: 10px;
   width: 200px;
   margin: 0 auto; 
@@ -120,9 +112,6 @@ button {
 }
 
 .area5 {
-  color: red;
-  border-bottom: 3px solid black;
-  border-radius: 50px;
   height: 10px;
   width: 100px;
   margin: 0 5px 0 0;
@@ -130,9 +119,6 @@ button {
 }
 
 .area6 {
-  color: red;
-  border-bottom: 3px solid black;
-  border-radius: 50px;
   height: 10px;
   width: 230px;
   margin: 0 auto; 
@@ -152,4 +138,5 @@ button {
  width: 100px;
  
 }
+
 

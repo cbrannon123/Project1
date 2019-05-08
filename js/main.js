@@ -8,9 +8,10 @@ var target1 = document.getElementById("target");
 var timer1 = document.getElementById("timer");
 var start = document.getElementById("start");
 // var startGame = document.querySelector('button');
-var points = document.querySelector('.score');
+var points = document.getElementById('score');
 var fOv = document.querySelector('.level');
-var areas = document.getElementsByClassName('area')
+var areas = document.getElementsByClassName('area');
+var miss = document.getElementById("miss");
 
 
 /*----- cached element references -----*/
@@ -18,11 +19,11 @@ var level, points, miss, currentTarget
 
 
 /*----- event listeners -----*/
+points.addEventListener('click', hit)
 target1.addEventListener('click', hit);
 start.addEventListener('click', render);
 fOv.addEventListener('click', gunSound);
-
-//points.addEventListener('click', hit);
+miss.addEventListener('click', hit);
 
 
 /*----- functions -----*/
@@ -57,17 +58,17 @@ function timer() {
   
 }
 
-
+//HIT  and Miss funtion!!!!!
 function hit(evt) {
   var marker = evt.target;
-  var point = 0;
-  point = points;
-  if(marker === target1) {
-    return point =+ 1;
-    
+  if(marker === marker) {
+   points.value = ++points;
+  } else if(marker !== marker) {
+     miss.value = ++miss;
   }
-  console.log(marker);
-  
+ 
+  console.log(points);
+  console.log(miss);
 }
 
 
@@ -80,7 +81,7 @@ function render() {
   }, 1000)
   var removePopUps = setInterval(function () {
     removePopUp()
-  }, 900)
+  }, 1000)
   reload.play();
   timer();
   
@@ -96,6 +97,7 @@ function gunSound() {
 
 function init() {
   currentTarget = [null, null, null, null, null, null];
-  
+  points = 0;
+  miss = 0;
   
 }
