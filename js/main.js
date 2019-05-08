@@ -14,7 +14,7 @@ var miss = document.getElementById('miss');
 
 
 /*----- cached element references -----*/
-var level, points, miss, currentTarge, gameLive;
+var level, points, miss, currentTarge, gameLive, timeStart;
 
 
 /*----- event listeners -----*/
@@ -27,6 +27,14 @@ fOv.addEventListener('click', noHit);
 
 /*----- functions -----*/
 init();
+
+function winMsg() {
+  alert('You win')
+}
+
+function loseMsg() {
+alert("you lose")
+}
 
 
 function popUp() {
@@ -44,16 +52,20 @@ function removePopUp() {
 //count down 
 
 function timer() {
-  var timeStart = 10;
+  timeStart = 10;
   var gameTime = setInterval(function () {
+    start.removeEventListener('click', render);
     timer1.innerHTML = timeStart;
     timeStart -= 1;
     if (timeStart < 0) {
+      points.innerHTML = 0;
+      miss.innerHTML = 0;
       clearInterval(gameTime);
-      
+      start.addEventListener('click', render);
     } 
     
   }, 1000)
+  
   
 }
 
@@ -62,7 +74,12 @@ function hit(evt) {
   var marker = evt.target;
   if (marker == marker) {
     points.innerHTML = ++points.innerHTML;
+    target1.style.display = "none"
+    // popUp()
   } 
+  if (points.innerHTML >= 10) {
+    winMsg()
+  }
     
   
 }
@@ -71,6 +88,9 @@ function noHit(evt) {
   var marker = evt.target;
   if (marker !== target1) {
     miss.innerHTML = ++ miss.innerHTML;
+  }
+  if(miss.innerHTML >= 5) {
+    loseMsg()
   }
   
   
@@ -81,17 +101,29 @@ function noHit(evt) {
 
 // button to start 
 function render() {
-  setInterval(function () {
+  var startPop = setInterval(function () {
+    if(timeStart == 0){
+      target1.style.display = "none"
+      clearInterval(startPop)
+    }
     popUp()
-  }, 800)
-   setInterval(function () {
+  }, 900)
+  var endPop = setInterval(function () {
+    if(timeStart == 0){
+      target1.style.display = "none"
+      clearInterval(endPop)
+    }
     removePopUp()
   }, 700)
   
+
+  if(timer1.innerHTML <= 0){
+    loseMsg()
+  }
   reload.play();
   
   timer();
-  init()
+  
   
   
   }
@@ -105,11 +137,13 @@ function gunSound() {
 }
 
 
+
 function init() {
   
- //points = 0;
- //miss = 0;
+//  points = 0;
+//  miss = 0;
  gameLive = false;
+ target1.style.display = 'none'
  
   
   
