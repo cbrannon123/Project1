@@ -138,5 +138,8 @@ button {
  width: 100px;
  
 }
+ 
 
-
+image {
+  background-image: (url(img/index.jpg))
+}
