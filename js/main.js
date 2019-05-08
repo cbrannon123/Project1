@@ -7,11 +7,10 @@ const gunShot = new Audio('https://freesound.org/data/previews/212/212607_165457
 var target1 = document.getElementById("target");
 var timer1 = document.getElementById("timer");
 var start = document.getElementById("start");
-// var startGame = document.querySelector('button');
 var points = document.getElementById('score');
 var fOv = document.querySelector('.level');
 var areas = document.getElementsByClassName('area');
-var miss = document.getElementById("miss");
+var miss = document.getElementById('miss');
 
 
 /*----- cached element references -----*/
@@ -19,11 +18,11 @@ var level, points, miss, currentTarget
 
 
 /*----- event listeners -----*/
-points.addEventListener('click', hit)
+points.addEventListener('click', hit);
 target1.addEventListener('click', hit);
 start.addEventListener('click', render);
 fOv.addEventListener('click', gunSound);
-miss.addEventListener('click', hit);
+miss.addEventListener('click', noHit);
 
 
 /*----- functions -----*/
@@ -45,11 +44,11 @@ function removePopUp() {
 //count down 
 
 function timer() {
-  var timeStart = 60;
+  var timeStart = 30;
   var gameTime = setInterval(function () {
     timer1.innerHTML = timeStart;
     timeStart -= 1;
-    if (timeStart < 0) {
+    if (timeStart <= 0) {
       clearInterval(gameTime);
       
     }
@@ -61,16 +60,28 @@ function timer() {
 //HIT  and Miss funtion!!!!!
 function hit(evt) {
   var marker = evt.target;
-  if(marker === marker) {
-   points.value = ++points;
-  } else if(marker !== marker) {
-     miss.value = ++miss;
-  }
+  var point = null;
+  //points.innerHTML = point;
+  if(marker !== false) {
+   point = ++point;
+   points.innerHTML = point;
+  
+  } 
  
   console.log(points);
-  console.log(miss);
+  //console.log(miss);
+  
 }
+ function noHit(evt) {
+   var marker = evt.target;
+   var hitMiss = null;
+   if(marker !== marker) {
+     hitMiss = ++hitMiss;
+     miss.innerHTML = hitMiss;
+   } 
+    console.log(miss);
 
+ }
 
 
 
@@ -78,10 +89,10 @@ function hit(evt) {
 function render() {
   var popUs = setInterval(function () {
     popUp()
-  }, 1000)
+  }, 900)
   var removePopUps = setInterval(function () {
     removePopUp()
-  }, 1000)
+  }, 900)
   reload.play();
   timer();
   
@@ -92,12 +103,14 @@ function render() {
 function gunSound() {
   gunShot.play();
   gunShot.currentTime = 0;
+  
 }
 
 
 function init() {
-  currentTarget = [null, null, null, null, null, null];
-  points = 0;
-  miss = 0;
+  //currentTarget = [null, null, null, null, null, null];
+  //points = '';
+  //miss = 0;
+  
   
 }
