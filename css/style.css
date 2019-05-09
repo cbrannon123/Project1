@@ -14,10 +14,29 @@ body {
   
 }
 
+h1 {
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
 
 h1 {
-  color: green;
-  margin: 0 0 0 600px;
+  background-image: url(img/shells.png);
+  background-color: rgb(45, 48, 51);
+  font-size: 40px;
+  border: 2px solid red;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  height: 100px;
+  width: 500px;
+  color: rgb(192, 23, 23);
+  margin: 0 0 0 500px;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  
 }
 
 .scorebox {
@@ -76,6 +95,8 @@ h1 {
 
 button {
   background-color:rgb(45, 48, 51);
+  font-weight: bolder;
+  font-size: 20px;
   color: red;
   height: 40px;
   width: 100px;
@@ -107,7 +128,6 @@ button {
 }
 
 
-
 .area4 {
   height: 10px;
   width: 200px;
@@ -126,20 +146,25 @@ button {
   height: 10px;
   width: 230px;
   margin: 0 auto; 
-  grid-area: a6;
+  grid-area: a6; 
 }
 
 .gun {
-  height: 50px;
+  height: 35px;
   margin: -100px 0 140px 0;
   grid-area: g1;
 }
 
  #target {
- background-image: url(img/terro.png);
+ background-image: url(img/badguy1.png);
+ background-size: 100%;
  background-repeat: no-repeat;
+ align-items: center;
+ position: absolute;
+ 
  height: 400px;
  width: 150px;
+ 
  
 }
  
