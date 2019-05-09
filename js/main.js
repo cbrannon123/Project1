@@ -11,10 +11,10 @@ var points = document.getElementById('score');
 var fOv = document.querySelector('.level');
 var areas = document.getElementsByClassName('area');
 var miss = document.getElementById('miss');
-
+var msg = document.getElementsByTagName('h1');
 
 /*----- cached element references -----*/
-var level, points, miss, currentTarge, gameLive, timeStart;
+var points, miss, currentTarge, timeStart;
 
 
 /*----- event listeners -----*/
@@ -29,11 +29,14 @@ fOv.addEventListener('click', noHit);
 init();
 
 function winMsg() {
-  alert('You win')
+alert('win')
+init();
+
 }
 
 function loseMsg() {
 alert("you lose")
+init();
 }
 
 
@@ -52,7 +55,7 @@ function removePopUp() {
 //count down 
 
 function timer() {
-  timeStart = 10;
+  timeStart = 30;
   var gameTime = setInterval(function () {
     start.removeEventListener('click', render);
     timer1.innerHTML = timeStart;
@@ -60,9 +63,14 @@ function timer() {
     if (timeStart < 0) {
       points.innerHTML = 0;
       miss.innerHTML = 0;
+      timer1.innerHTML = 30;
       clearInterval(gameTime);
+      
+      loseMsg()
       start.addEventListener('click', render);
-    } 
+      }
+      
+    
     
   }, 1000)
   
@@ -75,9 +83,13 @@ function hit(evt) {
   if (marker == marker) {
     points.innerHTML = ++points.innerHTML;
     target1.style.display = "none"
-    // popUp()
+    
   } 
   if (points.innerHTML >= 10) {
+    points.innerHTML = 0;
+    miss.innerHTML = 0;
+    timer1.innerHTML = 30;
+    clearInterval(timeStart);
     winMsg()
   }
     
@@ -90,7 +102,12 @@ function noHit(evt) {
     miss.innerHTML = ++ miss.innerHTML;
   }
   if(miss.innerHTML >= 5) {
+    points.innerHTML = 0;
+    miss.innerHTML = 0;
+    timer1.innerHTML = 30;
+    clearInterval(timeStart);
     loseMsg()
+    
   }
   
   
@@ -120,6 +137,7 @@ function render() {
   if(timer1.innerHTML <= 0){
     loseMsg()
   }
+
   reload.play();
   
   timer();
@@ -139,11 +157,11 @@ function gunSound() {
 
 
 function init() {
-  
-//  points = 0;
-//  miss = 0;
- gameLive = false;
  target1.style.display = 'none'
+ 
+ 
+
+ 
  
   
   
