@@ -136,14 +136,13 @@ button {
 }
 
  #target {
- background-image: url(img/bg1.png);
+ background-image: url(img/terro.png);
  background-repeat: no-repeat;
- height: 250px;
- width: 100px;
+ height: 400px;
+ width: 150px;
  
 }
  
 
-image {
-  background-image: (url(img/index.jpg))
-}
+
+

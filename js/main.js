@@ -4,6 +4,7 @@
 const reload = new Audio('https://freesound.org/data/previews/276/276956_5172328-lq.mp3')
 const gunShot = new Audio('https://freesound.org/data/previews/212/212607_1654571-lq.mp3');
 /*----- app's state (variables) -----*/
+
 var target1 = document.getElementById("target");
 var timer1 = document.getElementById("timer");
 var start = document.getElementById("start");
@@ -11,10 +12,10 @@ var points = document.getElementById('score');
 var fOv = document.querySelector('.level');
 var areas = document.getElementsByClassName('area');
 var miss = document.getElementById('miss');
-var msg = document.getElementsByTagName('h1');
+var msg = document.getElementById('msg');
 
 /*----- cached element references -----*/
-var points, miss, currentTarge, timeStart;
+var points, miss, currentTarge, timeStart
 
 
 /*----- event listeners -----*/
@@ -29,14 +30,20 @@ fOv.addEventListener('click', noHit);
 init();
 
 function winMsg() {
-alert('win')
-init();
+msg.innerHTML = `You WIN with ${points.innerHTML} hits!`
+target1.style.display = "none"
+timeStart = 2;
+}
 
+function timeUp(){
+msg.innerHTML = `press start to play again!`
+target1.style.display = "none"
 }
 
 function loseMsg() {
-alert("you lose")
-init();
+msg.innerHTML = `you LOSE! with ${miss.innerHTML} missed hits`;
+target1.style.display = "none";
+timeStart = 2;
 }
 
 
@@ -55,18 +62,18 @@ function removePopUp() {
 //count down 
 
 function timer() {
-  timeStart = 30;
+  timeStart = 20;
+  msg.innerHTML = ""
   var gameTime = setInterval(function () {
     start.removeEventListener('click', render);
     timer1.innerHTML = timeStart;
     timeStart -= 1;
     if (timeStart < 0) {
-      points.innerHTML = 0;
-      miss.innerHTML = 0;
-      timer1.innerHTML = 30;
+      //points.innerHTML = 0;
+      //miss.innerHTML = 0;
+      timer1.innerHTML = 20;
       clearInterval(gameTime);
-      
-      loseMsg()
+      timeUp()
       start.addEventListener('click', render);
       }
       
@@ -85,11 +92,11 @@ function hit(evt) {
     target1.style.display = "none"
     
   } 
-  if (points.innerHTML >= 10) {
+  if (points.innerHTML >= 1) {
     points.innerHTML = 0;
     miss.innerHTML = 0;
-    timer1.innerHTML = 30;
-    clearInterval(timeStart);
+    timer1.innerHTML = 20;
+    //clearInterval(timeStart);
     winMsg()
   }
     
@@ -99,14 +106,16 @@ function hit(evt) {
 function noHit(evt) {
   var marker = evt.target;
   if (marker !== target1) {
-    miss.innerHTML = ++ miss.innerHTML;
+    miss.innerHTML = ++miss.innerHTML;
   }
   if(miss.innerHTML >= 5) {
-    points.innerHTML = 0;
-    miss.innerHTML = 0;
-    timer1.innerHTML = 30;
-    clearInterval(timeStart);
     loseMsg()
+    points.innerHTML = 0;
+    //miss.innerHTML = 0;
+    timer1.innerHTML = timeStart;
+    //clearInterval(timeStart);
+    //return timeStart;
+    //loseMsg()
     
   }
   
@@ -114,10 +123,10 @@ function noHit(evt) {
 }
 
 
-
-
 // button to start 
 function render() {
+  points.innerHTML = 0;
+      miss.innerHTML = 0;
   var startPop = setInterval(function () {
     if(timeStart == 0){
       target1.style.display = "none"
@@ -157,12 +166,7 @@ function gunSound() {
 
 
 function init() {
- target1.style.display = 'none'
- 
- 
+ target1.style.display = 'none';
 
- 
- 
-  
   
 }
