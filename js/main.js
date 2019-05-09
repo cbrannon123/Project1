@@ -30,14 +30,15 @@ fOv.addEventListener('click', noHit);
 init();
 
 function winMsg() {
-msg.innerHTML = `You WIN with ${points.innerHTML} hits!`
-target1.style.display = "none"
+msg.innerHTML = `You WIN with ${points.innerHTML} hits!`;
+target1.style.display = "none";
 timeStart = 2;
+
 }
 
 function timeUp(){
-msg.innerHTML = `press start to play again!`
-target1.style.display = "none"
+msg.innerHTML = `press start to play again!`;
+target1.style.display = "none";
 }
 
 function loseMsg() {
@@ -50,7 +51,7 @@ timeStart = 2;
 function popUp() {
   var random = Math.floor((Math.random() * 6) + 0);
   currentTarget = areas[random];
-  currentTarget = currentTarget.append(target1)
+  currentTarget = currentTarget.append(target1);
 }
 
 function removePopUp() {
@@ -92,8 +93,8 @@ function hit(evt) {
     target1.style.display = "none"
     
   } 
-  if (points.innerHTML >= 1) {
-    points.innerHTML = 0;
+  if (points.innerHTML >= 10) {
+    //points.innerHTML = 0;
     miss.innerHTML = 0;
     timer1.innerHTML = 20;
     //clearInterval(timeStart);
