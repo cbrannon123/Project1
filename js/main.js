@@ -30,7 +30,7 @@ fOv.addEventListener('click', noHit);
 init();
 
 function winMsg() {
-  msg.innerHTML = `You WIN with ${points.innerHTML} hits!`;
+  msg.innerHTML = `YOU WIN with ${points.innerHTML} hits!`;
   target1.style.display = "none";
   timeStart = 2;
 
@@ -42,7 +42,7 @@ function timeUp() {
 }
 
 function loseMsg() {
-  msg.innerHTML = `you LOSE! with ${miss.innerHTML} missed hits`;
+  msg.innerHTML = `YOU LOSE! You missed ${miss.innerHTML} times!`;
   timeStart = 2;
 
 }
