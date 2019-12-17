@@ -36,23 +36,21 @@ function winMsg() {
   msg.innerHTML = `YOU WIN with ${points.innerHTML} hits!`;
   target1.style.display = "none";
   timeStart = 2;
-  winMusic.play()
+  winMusic.play();
 
 }
 
 function timeUp() {
   msg.innerHTML = `Press start to play again!`;
   target1.style.display = "none";
-  music.pause()
+  music.pause();
 }
 
 function loseMsg() {
   msg.innerHTML = `YOU LOSE! Missed ${miss.innerHTML} times!`;
   timeStart = 2;
   loser.play()
-
 }
-
 
 function popUp() {
   var random = Math.floor((Math.random() * 6) + 0);
